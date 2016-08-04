@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>INT222 - index.html</title>
+    <link rel="stylesheet"    href="reset.css" type="text/css" media="screen">
+    <link rel="stylesheet"    type="text/css" href="sitecss.css">
+    <script src="myscript.js" type="text/javascript"></script>  
+  </head>
+  <body>
+     <section  id="intro">
+        <header>
+              <h2><span id="introh2">&nbsp; Mortgage Payment Calculation &nbsp;</span></h2>
+       </header>
+     </section>
+     <div id="content">
+         <div id="mainContent">
+             <section id="section0" class="showContent">
+                 <article>
+                    <div>
+                      <form name="mortgage" 
+                             method="post" 
+                             action="https://zenit.senecac.on.ca/~emile.ohan/cgi-bin/assign3.cgi"
+                             onsubmit="return completeFormValidation();">
+                             <!-- Your form goes here   -->
+							 
+							 UserId        <input id="userId" type="text" name="userId" autofocus required size="10" maxlength="10"/>
+							 Name          <input id="client" type="text" name="client" required/><br /><br />
+							 Property Value<input id="propValue" type="text" name="propValue" required size="7" maxlength="6"/>
+							 Down Payment  <input id="downPay" type="text" name="downPay" required size="7" maxlength="6" />
+							 
+							 <br /><br />Income Range  <select id="income" name="income" size="2">
+							 <option value="1">Under 30,000</option>
+							 <option value="2">30,001 - 40,000</option>
+							 <option value="3">40,001 - 50,000</option>
+							 <option value="4">50,001 - 60,000</option>
+							 <option value="5">60,001 - 70,000</option>
+							 <option value="6">70,001 - 80,000</option>
+							 <option value="7">80,001 - 90,000</option>
+							 <option value="8">90,001 - 100,000</option>
+							 <option value="9">100,001 - 110,000</option>
+							 <option value="10">110,001 - 120,000</option>
+							 </select>
+							 
+							 <br /><br />Property Details
+							 <input id="propDetails1" type="checkbox" name="propDetails" value="D1" onclick="checkBox(this);"/>House
+							 <input id="propDetails2" type="checkbox" name="propDetails" value="D2" onclick="checkBox(this);"/>Duplex
+							 <input id="propDetails3" type="checkbox" name="propDetails" value="D3" onclick="checkBox(this);"/>Semi-detached
+							 <input id="propDetails4" type="checkbox" name="propDetails" value="D4" onclick="checkBox(this);"/>Condo
+							 <input id="propDetails5" type="checkbox" name="propDetails" value="D5" onclick="checkBox(this);"/>Apartment
+							 <input id="propDetails6" type="checkbox" name="propDetails" value="D6" onclick="checkBox(this);"/>Town House<br>
+							 <input id="propDetails7" type="checkbox" name="propDetails" value="D7" onclick="checkBox(this);"/>Any of the above
+					 
+							
+							<br /><br />Property Location
+							<input id="propLocation1" type="radio" name="propLocation" value="L1" />Toronto
+							<input id="propLocation2" type="radio" name="propLocation" value="L2" />St. Catherine
+							<input id="propLocation3" type="radio" name="propLocation" value="L3" />Aurora
+							<input id="propLocation4" type="radio" name="propLocation" value="L4" />Mississauga
+							<input id="propLocation5" type="radio" name="propLocation" value="L5" />Waterloo
+							
+							<br /><br />
+							Year<input id="mortYear" type="text" name="mortYear" required size="5" maxlength="4"/>
+							Month<input id="mortMonth" type="text" name="mortMonth" required size="4" maxlength="2"/>
+							Interest Rate<input id="intRate" type="text" name="intRate" required size="7" maxlength="6"/>
+							No. of Years<input id="amortization" type="text" name="amortization" required size="3" maxlength="2"/>
+							<br />
+							Monthly Payment<input id="payment" type="text" name="payment" size="10" disabled='disabled'/>
+							<br />
+							<br />
+							<input type="button" value="Calculate Monthly Payment"/>
+							<br />
+							<br />
+							Comments<textarea id="comments" name="comments" rows="2"></textarea> 
+							
+							<input id="jsActive" type="hidden" name="jsActive" value="OFF"/>
+							<input id="lastName" type="hidden" name="lastName" value="Chen"/>
+							<input id="studentId" type="hidden" name="studentId" value="076898121"/>
+							<input id="zenitAccount" type="hidden" name="zenitAccount" value="int222_141c04"/>
+							
+							<br /><br />
+							<input type="submit" value="Apply"/>
+							<input type="reset" value="Clear"/>
+							
+					 </form>
+                    </div>
+                 </article>
+             </section>   
+         </div>
+         <aside>
+         <section>
+               <script>
+                   document.write('<span class="boldtext">'+todaysDate+'</span>');  
+               </script>
+               <div id="reserverd">
+                   This area is reserved
+               </div>   
+             </section>
+         </aside>
+     </div>
+     <footer>
+       <div>
+          <section id="lastUpdated">
+             <p><a href="../../">Main Home</a>
+             <script type="text/javascript">
+                 document.write ("&nbsp; &nbsp; <a href='http://validator.w3.org/check?uri=" +
+                      location.href+ "\;ss=1;verbose=1' target='display'>" +
+                      "<img src='https://zenit.senecac.on.ca/~emile.ohan/int222/images/rsz_html5.png' " +
+                      "width='66' height='24' border='0' " +
+                      "alt='Valid HTML5.' title='Valid HTML5.' /></a>&nbsp; &nbsp; ")
+                 var dt=new Date(document.lastModified);   // Get document last modified date
+                 document.write('This page was last updated on '+dt.toLocaleString());
+                 document.write ("&nbsp; &nbsp;<a href='http://jigsaw.w3.org/css-validator/validator?uri=" +
+                      location.href +"' target='display'>" +
+                     "<img id='v_css' src='https://zenit.senecac.on.ca/~emile.ohan/int222/images/rsz_css.png' " + 
+                     "width='66' height='24' border='0' " +
+                     "alt='Valid CSS' title='Valid CSS' /></a>")
+             </script>
+            &nbsp; &nbsp;<a href="sitecss.css">CSS Used</a></p>
+          </section>
+       </div>
+     </footer>
+  </body>
+</html>
